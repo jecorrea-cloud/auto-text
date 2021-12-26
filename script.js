@@ -9,10 +9,10 @@ let speed = 300 / speedEl.value;
 writeText();
 
 function writeText() {
-  // In this case this will at first write out 'W'
+  // In this case line 13 will at first write out 'W'
   textEl.innerText = text.slice(0, idx);
 
-  // Increase the value
+  // Increase the value. Although you can make it stop if u want to
   idx++;
 
   // Set back idx if all letters have been written
@@ -23,3 +23,10 @@ function writeText() {
   // Keep writing
   setTimeout(writeText, speed);
 }
+
+// To control how fast it will go
+
+speedEl.addEventListener(
+  "input",
+  (event) => (speed = 300 / event.target.value)
+);
